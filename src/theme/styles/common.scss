@@ -1,0 +1,19 @@
+@import "../fonts/Arimo/index.scss";
+@import "../fonts/SourceSansPro/index.scss";
+@import "colors";
+
+html,
+body {
+  &,
+  & > * {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+  }
+}
+
+body {
+  font-family: "SourceSansPro";
+  color: $color-black;
+  font-size: 12px;
+}

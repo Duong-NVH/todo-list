@@ -10,3 +10,6 @@ export const formatDate = (date) => {
   let y = time.getFullYear();
   return `${y}-${m}-${d}`;
 };
+
+export const validDaysToDue = (due) =>
+  Boolean(due.setHours(0, 0, 0, 0) - new Date().setHours(0, 0, 0, 0) >= 0);

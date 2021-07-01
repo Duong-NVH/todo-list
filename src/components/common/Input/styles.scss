@@ -45,3 +45,9 @@
     height: 100%;
   }
 }
+
+.err-msg {
+  color: $color-red;
+  font-weight: bold;
+  margin-top: space(1);
+}

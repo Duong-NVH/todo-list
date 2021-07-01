@@ -1,15 +1,19 @@
 import List from "./components/List";
 import NewTask from "./components/NewTask";
 import "./styles.scss";
+import store from "./redux";
+import { Provider } from "react-redux";
 
 function App() {
   return (
-    <div className="App">
-      <div className="container">
-        <NewTask />
-        <List />
+    <Provider store={store}>
+      <div className="App">
+        <div className="container">
+          <NewTask />
+          <List />
+        </div>
       </div>
-    </div>
+    </Provider>
   );
 }
 

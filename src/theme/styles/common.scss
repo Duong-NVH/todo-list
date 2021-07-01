@@ -1,6 +1,7 @@
 @import "../fonts/Arimo/index.scss";
 @import "../fonts/SourceSansPro/index.scss";
 @import "colors";
+@import "spacing";
 
 html,
 body {
@@ -16,4 +17,43 @@ body {
   font-family: "SourceSansPro";
   color: $color-black;
   font-size: 12px;
+}
+
+button {
+  color: #ffffff;
+  font-family: Arimo;
+  font-size: 12px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+input,
+textarea,
+select {
+  @extend .border-black;
+  border-radius: 0px;
+  outline: none;
+  font-family: "SourceSansPro";
+  font-size: 12px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+::-webkit-input-placeholder {
+  color: $color-black;
+}
+
+.border-black {
+  border: 1px solid $color-black;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+  margin: 0px;
+  margin-bottom: space(8);
+  margin-top: space(4);
 }

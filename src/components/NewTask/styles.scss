@@ -1,0 +1,7 @@
+@import "../../theme//styles/index.scss";
+
+.new {
+  & > :nth-child(2) {
+    padding: 0px space(8) 0px space(8);
+  }
+}

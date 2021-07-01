@@ -1,0 +1,19 @@
+@import "../../../theme/styles/index.scss";
+
+.detail-form {
+  & > * {
+    margin-bottom: space(6);
+  }
+  & > :last-child {
+    margin-top: space(10);
+    margin-bottom: space(10);
+  }
+  #row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    & > * {
+      width: 45%;
+    }
+  }
+}

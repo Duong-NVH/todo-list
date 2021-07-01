@@ -1,4 +1,5 @@
 $space-unit: 4px;
+$break-point: 768px;
 
 @function space($n) {
   @return $space-unit * $n;

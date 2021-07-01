@@ -1,0 +1,33 @@
+@import "../../../theme/styles/index.scss";
+
+.btn-remove-sm {
+  height: 28px;
+  width: 94px;
+  background-color: $color-red;
+}
+
+.btn-remove-lg {
+  height: 36px;
+  width: 110px;
+  background-color: $color-red;
+}
+
+.btn-done-lg {
+  height: 36px;
+  width: 110px;
+  background-color: $color-blue;
+}
+
+.btn-detail-sm {
+  height: 28px;
+  width: 94px;
+  background-color: $color-teal;
+}
+
+.btn-submit {
+  height: 32px;
+  width: 100%;
+  background-color: $color-green;
+  font-size: 15px;
+  font-weight: bold;
+}

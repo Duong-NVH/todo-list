@@ -1,0 +1,47 @@
+@import "../../../theme/styles/index.scss";
+
+.inputLabel {
+  margin: 0px 0px space(1) 0px;
+  font-weight: bold;
+}
+
+.inner-input {
+  input {
+    padding: space(0);
+    border: none;
+  }
+}
+
+.input-outlined {
+  @extend .inner-input;
+  padding: space(2.5);
+  border-radius: 5px;
+  border: 1px solid $color-grey-outline;
+}
+
+.input-multiple {
+  padding: space(1.25);
+}
+
+.input-select {
+  @extend .border-black;
+  select {
+    padding: space(0);
+    border: none;
+  }
+  padding: space(2.5);
+}
+
+.input-date {
+  @extend .inner-input;
+  @extend .border-black;
+  padding: space(2.5);
+  position: relative;
+  .vertical-line {
+    position: absolute;
+    top: space(0);
+    right: space(10);
+    border-left: 1px solid $color-black;
+    height: 100%;
+  }
+}

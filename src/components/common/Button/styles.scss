@@ -1,33 +1,54 @@
 @import "../../../theme/styles/index.scss";
 
+@function hover-background($color) {
+  @return lighten($color, 5%)
+    radial-gradient(circle, transparent 5%, lighten($color, 5%) 5%)
+    center/10000%;
+}
+
+@function active-background($color) {
+  @return lighten($color, 15%);
+}
+
+@mixin button-effect($color) {
+  background-color: $color;
+  &:hover {
+    background: hover-background(($color));
+  }
+  &:active {
+    background-color: active-background($color);
+    transition: background 0s;
+  }
+}
+
 .btn-remove-sm {
+  @include button-effect($color-red);
   height: 28px;
-  width: 94px;
-  background-color: $color-red;
+  width: 80px;
 }
 
 .btn-remove-lg {
+  @include button-effect($color-red);
   height: 36px;
   width: 110px;
-  background-color: $color-red;
 }
 
 .btn-done-lg {
+  @include button-effect($color-blue);
   height: 36px;
   width: 110px;
-  background-color: $color-blue;
 }
 
 .btn-detail-sm {
+  @include button-effect($color-teal);
   height: 28px;
   width: 94px;
-  background-color: $color-teal;
 }
 
 .btn-submit {
+  @include button-effect($color-green);
   height: 32px;
   width: 100%;
-  background-color: $color-green;
   font-size: 15px;
   font-weight: bold;
 }

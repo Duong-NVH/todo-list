@@ -6,16 +6,24 @@ import { formatDate } from "../../../utils";
 import { useDispatch } from "react-redux";
 import ListActions from "../../../redux/list.redux";
 import { validDaysToDue, createKey } from "../../../utils";
+import { PRIORITY_OPTIONS, PRIORITY_DEFAULT_KEY } from "../../../const";
 
-const DetailForm = ({ currentTitle, currentDes, currentDue, currentPrior }) => {
-  const PRIORITY_OPTIONS = ["Low", "Normal", "High"];
+const DetailForm = ({
+  currentTitle,
+  currentDes,
+  currentDue,
+  currentPrior,
+  currentId,
+  currentState,
+  onChangeVisibility,
+}) => {
   const [title, setTitle] = useState(currentTitle ? currentTitle : "");
   const [des, setDes] = useState(currentDes ? currentDes : "");
   const [due, setDue] = useState(
     currentDue ? currentDue : formatDate(new Date())
   );
   const [prior, setPrior] = useState(
-    currentPrior ? currentPrior : PRIORITY_OPTIONS[1]
+    currentPrior ? currentPrior : PRIORITY_OPTIONS[PRIORITY_DEFAULT_KEY]
   );
   const [err, setErr] = useState({ title: "", due: "" });
 
@@ -29,6 +37,8 @@ const DetailForm = ({ currentTitle, currentDes, currentDue, currentPrior }) => {
 
   const onChangePrior = (e) => setPrior(e.target.value);
 
+  const onCloseAfterUpdate = () => onChangeVisibility();
+
   const onSubmit = () => {
     if (!title.length > 0) {
       setErr({ ...err, title: "This field is required." });
@@ -39,9 +49,21 @@ const DetailForm = ({ currentTitle, currentDes, currentDue, currentPrior }) => {
       return;
     }
     if (currentTitle) {
-      //update
+      dispatch(
+        ListActions.update({
+          title,
+          des,
+          due,
+          prior,
+          id: currentId,
+          state: currentState,
+        })
+      );
+      onCloseAfterUpdate();
     } else {
-      dispatch(ListActions.add({ title, des, due, prior, id: createKey() }));
+      dispatch(
+        ListActions.add({ title, des, due, prior, id: createKey(), state: 1 }) // 1-uncheck, 0-check
+      );
       setTitle("");
       setDes("");
       setDue(formatDate(new Date()));

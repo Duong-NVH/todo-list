@@ -26,6 +26,7 @@ button {
   border-radius: 10px;
   border: none;
   cursor: pointer;
+  transition: background 0.8s;
 }
 
 input,
@@ -54,6 +55,6 @@ select {
   width: 100%;
   text-align: center;
   margin: 0px;
-  margin-bottom: space(8);
-  margin-top: space(4);
+  margin-bottom: space(12);
+  margin-top: space(6);
 }

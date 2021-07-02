@@ -4,7 +4,7 @@ import { DetailForm } from "../common/";
 
 const NewTask = () => {
   return (
-    <div className="new">
+    <div className="new-container">
       <p className="title">New Task</p>
       <div>
         <DetailForm isCreate={true} />

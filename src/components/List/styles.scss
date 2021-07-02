@@ -1,1 +1,96 @@
 @import "../../theme//styles/index.scss";
+
+.list-container {
+  width: 100%;
+  overflow-y: scroll;
+  & > :nth-child(2) {
+    padding: 0px space(8) 0px space(8);
+  }
+  padding-bottom: space(40);
+  box-sizing: border-box;
+}
+
+.list-item {
+  @extend .border-black;
+  margin-top: space(5);
+  & > * {
+    padding: space(5);
+  }
+  & > :first-child {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    & > :first-child {
+      display: flex;
+      input {
+        width: 18px;
+        height: 18px;
+      }
+      span {
+        font-size: 18px;
+        margin-left: space(3);
+      }
+    }
+    & > :nth-child(2) {
+      & > :first-child {
+        margin-right: space(4);
+      }
+    }
+  }
+  & > :nth-child(2) {
+    border-top: 1px solid $color-black;
+    padding-bottom: space(0);
+  }
+}
+
+.action-bar {
+  @extend .border-black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: space(5);
+  box-sizing: border-box;
+  background: $color-grey;
+  position: fixed;
+  bottom: 0;
+  width: 55%;
+  & > :first-child {
+    font-size: 15px;
+  }
+  & > :nth-child(2) {
+    & > :first-child {
+      margin-right: space(10);
+    }
+  }
+}
+
+@media only screen and (max-width: $break-point) {
+  .list-container {
+    overflow: visible;
+  }
+  .list-item {
+    & > :first-child {
+      & > :nth-child(2) {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+      }
+      & > :nth-child(2) {
+        & > :first-child {
+          margin-right: space(0);
+          margin-bottom: space(2);
+        }
+      }
+    }
+  }
+  .action-bar {
+    width: 100%;
+    & > :nth-child(2) {
+      & > :first-child {
+        margin-right: space(5);
+      }
+    }
+  }
+}
